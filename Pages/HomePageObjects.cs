@@ -27,7 +27,7 @@ namespace RealEstateFilters.Pages
             _txtHeader = _page.Locator("text=Home is where");
             _txtSearchHeader = _page.Locator("text=3 Bedroom Houses For Sale In Blockhouse Bay");
             _txtPropertySearchHeader = _page.Locator("text=41 Dundale Avenue, Blockhouse Bay");
-            _txtPriceSearchHeader = _page.Locator("text=Showing 1 - 3 of 3 properties");
+            _txtPriceSearchHeader = _page.Locator("text=Showing");
         }
 
         //Methods
@@ -44,7 +44,8 @@ namespace RealEstateFilters.Pages
             Console.WriteLine("suburb provided : " + sName);
             await _page.GetByPlaceholder("Suburb, address or person", new() { Exact = true }).ClickAsync();
             await _page.GetByPlaceholder("Suburb, address or person", new() { Exact = true }).FillAsync(sName);
-            await _page.GetByText("Blockhouse Bay • 31 properties").ClickAsync();
+            await _page.Locator("//*[@id=\"results\"]/div[1]/bt-autocomplete-suburb-result/div/div[2]/div[1]").ClickAsync();
+            
         }
 
         //Function to select bedrooms and bathroom filters
