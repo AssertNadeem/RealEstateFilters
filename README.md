@@ -46,3 +46,19 @@ graph TB
 a. Searching listings using suburb, bedroom and bathroom filters.
 b. Search listings using suburb, price, property type and land area filter.
 
+Technologies used:
+1. Visual studio 2022 community edition
+2. Playwright
+3. Specflow
+4. C# Dot Net
+5. NUnit.
+6.  Website: https://www.barfoot.co.nz/
+
+Process to run the tests;
+1. Pull the code/ clone the code in VS
+2. Run using GUI
+
+or CLI
+
+1. dotnet test -- NUnit.NumberOfTestWorkers=2
+
